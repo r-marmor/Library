@@ -1,0 +1,44 @@
+/* RESET  */
+
+body 
+{
+    margin: 0;
+    padding: 0;
+    background-color: aquamarine;
+}
+
+/* UTILITY CLASSES */
+
+
+
+
+/* MAIN */
+
+main 
+{
+    width: 70vw;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/* HEADER */
+
+header 
+{
+   
+
+}
+
+/* LEFT PANEL */
+
+.left-panel
+{
+
+}
+
+/* DESK */
+
+.desk
+{
+    
+}
