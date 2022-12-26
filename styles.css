@@ -1,44 +1,251 @@
-/* RESET  */
-
-body 
-{
-    margin: 0;
+*, *::after, *::before {
+    margin : 0;
     padding: 0;
-    background-color: aquamarine;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;;
 }
 
-/* UTILITY CLASSES */
-
-
-
-
-/* MAIN */
-
-main 
-{
-    width: 70vw;
-    margin: 0 auto;
-    background-color: white;
+/* .container {
+    display: flex;
+    height: 100vh;
+    background-color: beige;
+    width: 100%;
 }
 
-/* HEADER */
-
-header 
-{
-   
-
+.side_bar {
+    height: 100%;
+    width: 25%;
+    background-color: aquamarine; 
 }
 
-/* LEFT PANEL */
-
-.left-panel
-{
-
+.side_bar_top {
+    height: 50%;
+    background-color: rgba(0, 0, 255, 0.5);
 }
 
-/* DESK */
+.side_bar_bot {
+    height: 50%;
+    background-color: rgba(0, 255, 0, 0.5);
+}
 
-.desk
-{
+
+.main_content {
+    height: 100%;
+    width: 75%;
+    background-color: brown;
+}
+
+img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-position: center;
+    margin: 15px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.dashboard_title {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.navbar {
+    height: 25%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.projects {
+    background-color: rgba(0, 0, 0, 0.75);
+    height: 75%;
+    width: 100%;
+}
+
+.main_content_left {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-auto-rows: 1fr;
+    background-color: rgba(127, 255, 212, 0.75);
+    height: 100%;
+    width: 75%;
+    gap: 40px;
+    padding: 40px;
+}
+
+.main_content_right {
+    background-color: blueviolet;
+    height: 100%;
+    width: 25%;
+    text-align: justify;
+    padding: 15px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 200px;
+    width: 1fr;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    cursor: pointer;
+} */
+
+
+.grey-border {
+    border: solid 2px rgb(75, 74, 74);
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 8fr;
     
+}
+
+.form-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    padding: 15px;
+}
+
+h1 {
+    font-size: small;
+}
+.books-heading {
+    display:flex;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-top: solid 2px rgb(75, 74, 74);
+    border-right: solid 2px rgb(75, 74, 74);
+    border-bottom: solid 2px rgb(75, 74, 74);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: aqua;
+    border-right: solid 2px rgb(75, 74, 74);
+    border-left: solid 2px rgb(75, 74, 74);
+    padding: 10px;
+}
+
+.books {
+    display: grid;
+    gap: 20px;
+    background-color: #bccbde;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 25%;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#add_btn {
+    padding: 5px 20px;
+    background-color: rgb(97, 97, 236);
+    border-radius: 10px;
+}
+
+.add_btn:hover {
+    cursor: pointer;
+}
+
+#formulaire {
+    display: none;
+    margin-top: 20px;
+    background-color: white;
+    height: auto;
+    width: 250px;
+    border-radius: 10px;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+form {
+    display:flex; 
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    align-items: center;
+}
+
+
+
+.entry {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit_btn {
+    padding: 5px;
+    background-color: rgb(25, 172, 25);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    margin: 20px 0;
+}
+
+.reset_btn {
+    padding: 5px;
+    background-color: rgb(134, 43, 43);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+}
+
+
+
+
+@media screen and (min-width: 425px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+    }   
+}
+
+@media screen and (min-width: 768px) {
+    .books {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

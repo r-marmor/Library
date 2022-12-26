@@ -4,25 +4,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+       <script src="script.js" defer></script>
+    <title>Document</title>
 </head>
 <body>
-    <main>
-        main
-        <header>
-            header
-        </header>
-        <div class="library">
-            <div class="left-panel">
-                Left panel
-            </div>
-            <div class="desk">
-                
-            </div>
+<!-- <div class="container">
+    <div class="side_bar">
+        <div class="side_bar_top">
+            <h1 class="dashboard_title">Dashboard</h1>
+            <ul>
+                <li class="menu flex">
+                    <img src="images/image1.jpg">
+                    <p>Menu</p>
+                </li>
+                <li class="menu flex">
+                    <img src="images/book.png">
+                    <p>Library</p>
+                </li>
+                <li class="menu flex">
+                    <img src="images/image2.jpg">
+                    <p>Profile</p>
+                </li>
+                <li class="menu flex">
+                    <img src="images/image2.jpg">
+                    <p>Settings</p>
+                </li>
+            </ul>
+        </div>
+        <div class="side_bar_bot"></div>
     </div>
-    </main>
-    
+    <div class="main_content">
+        <div class="navbar">coucou</div>
+        <div class="projects flex">
+            <div class="main_content_left">
+                <div class="project1 card">
+                    <h3>Project1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+            </div>
+            <div class="main_content_right">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel eligendi consequatur laudantium earum officia voluptas natus dolorem fugit, nam, labore beatae voluptate atque amet? Minus a mollitia eius laborum minima doloribus quia nemo at? Ratione.</div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="form-heading grey-border">
+        <h1>Add new book to Library</h1>
+    </div>
+    <div class="books-heading">
+        <h1>Current books in Library</h1>
+    </div>
+    <div class="form">
+        <button id="add_btn">NEW BOOK</button>
+        <div id="formulaire">
+            <form id="add-book">
+                <div class="entry">
+                    <label for="Title">Title</label>
+                    <input type="text" name="Title" id="Title">
+                </div>
+                <div class="entry">
+                    <label for="Author">Author</label>
+                    <input type="text" name="Author" id="Author">
+                </div>
+                <div class="entry">
+                    <label for="Pages">Pages</label>
+                    <input type="text" name="Pages" id="Pages">
+                </div>
+                <div class="entry">
+                    <label for="Read">Read</label>
+                    <input type="text" name="Read" id="Read">
+                </div>
+            </form>
+            <button type="submit" class="submit_btn">Submit to library</button>
+            <button type="reset" class="reset_btn">Reset form</button>
+        </div>
+    </div>
+    <div class="books"></div>
+</div>
 </body>
 </html>
