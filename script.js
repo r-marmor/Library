@@ -1,6 +1,7 @@
 // Empty array for library
 let myLibrary = [];
-console.log(myLibrary);
+
+// displayBooksOnPage();
 
 // Object constructor
 
@@ -18,7 +19,6 @@ class Book {
 // Function to populate myLibrary array
 function addBookToLibrary(Title, Author, Pages, Read) {
     let book = new Book(Title, Author, Pages, Read);
-    
     myLibrary.push(book);
     
     displayBooksOnPage();
@@ -30,27 +30,75 @@ function addBookToLibrary(Title, Author, Pages, Read) {
 function displayBooksOnPage() {
     const books = document.querySelector('.books');
     const removeDivs = document.querySelectorAll(".card");
+
     for (let i= 0; i < removeDivs.length; i++) {
         removeDivs[i].remove();
     }
 
+
+
     // Loop over the library array and display to the cards
+    let index = 0;
     myLibrary.forEach(book => {
         const card = document.createElement('div');
         card.classList.add('card');
         books.appendChild(card);
+
         for (let key in book) {
             const para = document.createElement('p');
             para.textContent = `${key}: ${book[key]}`;
             card.appendChild(para);
         }
+
+        // Create remove book button 
+        const removeBookButton = document.createElement("button");
+        removeBookButton.classList.add("remove-book-btn");
+        removeBookButton.textContent = "Remove from library";
+        removeBookButton.dataset.linkedArray = index;
+        
+        card.appendChild(removeBookButton);
+
+        removeBookButton.addEventListener('click', removeBookFromLibrary);
+
+        function removeBookFromLibrary() {
+            let retrieveBookToRemove = removeBookButton.dataset.linkedArray;
+            myLibrary.splice(retrieveBookToRemove, 1);
+            card.remove();
+            displayBooksOnPage();
+        }
+
+        // Create a read status button
+        const readStatusButton = document.createElement("button");
+        readStatusButton.classList.add("read-status-btn");
+        readStatusButton.textContent = "Toggle Read Status";
+
+        // Link the read status button to a data attribute
+        readStatusButton.dataset.linkedArray = index;
+        card.appendChild(readStatusButton);
+
+        readStatusButton.addEventListener('click', toggleReadSatus);
+
+        function toggleReadSatus() {
+            let retrieveBookToToggle = readStatusButton.dataset.linkedArray;
+            Book.prototype = Object.create(Book.prototype);
+            const toggleBook = new Book();
+
+            if ((myLibrary[parseInt(retrieveBookToToggle)].Read) == "Yes") {
+                toggleBook.Read = "No";
+                myLibrary[parseInt(retrieveBookToToggle)].Read = toggleBook.Read;
+            } else if ((myLibrary[parseInt(retrieveBookToToggle)].Read) == "No") {
+                toggleBook.Read = "Yes";
+                myLibrary[parseInt(retrieveBookToToggle)].Read = toggleBook.Read;
+            }
+            displayBooksOnPage();
+        }
+    index++;
     });
 }
 
 
 const addBtn = document.getElementById('add_btn');
 const formulaire = document.getElementById("formulaire");
-
 addBtn.addEventListener('click', displayForm);
 
 function displayForm() {
@@ -86,4 +134,3 @@ resetBtn.addEventListener('click', resetForm);
 function resetForm() {
     document.getElementById("add-book").reset();
 }
-
