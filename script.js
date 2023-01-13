@@ -11,8 +11,7 @@ class Book {
     this.Author = Author;
     this.Pages = Pages;
     this.Read = Read;
-}
-
+    }
 }
 
 
